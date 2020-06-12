@@ -1,4 +1,4 @@
-package main
+package  go_jingdong
 
 import (
 	"crypto/md5"

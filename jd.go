@@ -1,4 +1,4 @@
-package  go_jingdong
+package go_jingdong
 
 import (
 	"crypto/md5"
@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"sort"
 	"strings"
+	"time"
 )
 
 type JD struct {
@@ -24,9 +25,9 @@ func NewDj(config *config.Config) *JD {
 	return jd
 }
 func (t *JD) buildParams(system base.System) map[string][]string {
-	t.sysParams=make(map[string]string)
-	//t.sysParams["timestamp"] = time.Now().Format("2006-01-02 15:04:05")
-	t.sysParams["timestamp"] = "2020-06-12 18:52:50"
+	t.sysParams = make(map[string]string)
+	t.sysParams["timestamp"] = time.Now().Format("2006-01-02 15:04:05")
+	//t.sysParams["timestamp"] = "2020-06-12 18:52:50"
 	t.sysParams["v"] = t.config.V
 	t.sysParams["sign_method"] = "md5"
 	t.sysParams["format"] = "json"
